@@ -1,9 +1,8 @@
-vscode 開啟資料夾：.../Code
+This study presents a CAD system that combines ultrasound images and clinical data to classify pleural effusions as benign or malignant. Using 100 cases, the workflow includes image preprocessing, deep segmentation, ROI expansion, texture and deep feature extraction, and dimensionality reduction. Three feature combinations were tested with multiple machine-learning models, with the best performance achieved by integrating deep, texture, and clinical features.
 
-程式執行皆使用相對路徑
-eg. python -m Classification.DL.image_only.train
 
-本程式碼共使用三個虛擬環境，已分別匯出各環境的套件清單，環境與程式碼的對應關係如下：
-.venvFeatureExtract：/Feature_extraction
-.venvPE：/Preprocessing, /Classification/ML
-.venvpytorch：/Segmentation, /Classification/DL, /Classification/DL_ML
+
+The program uses three separate virtual environments, and the package lists for each environment have been exported. The correspondence between the environments and the code is as follows:
+* .venvFeatureExtract：/Feature_extraction
+* .venvPE：/Preprocessing, /Classification/ML
+* .venvpytorch：/Segmentation, /Classification/DL, /Classification/DL_ML
