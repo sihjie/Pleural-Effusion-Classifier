@@ -1,0 +1,192 @@
+DL_model:
+  batch_size: 16
+  dropout:
+    default: false
+    dropout_rate: 0.5
+    options:
+    - true
+    - false
+  early_stopping:
+    default: true
+    patience: 15
+  epochs: 100
+  learning_rate:
+    default: 0.001
+    options:
+    - 0.001
+    - 0.0001
+  loss_function:
+    default: f1
+    options:
+    - weighted-ce
+    - focal
+    - cb-focal
+    - f1
+  model_name:
+    default: efficientnetv2_s
+    options:
+    - resnet50
+    - efficientnetv2_s
+    - mobilenetv3_small
+    - densenet121
+ML_model:
+  name:
+    default: XGBoost
+    options:
+    - DecisionTree
+    - RandomForest
+    - SVM
+    - LogisticRegression
+    - XGBoost
+  parameters:
+    DecisionTree:
+      max_depth:
+        default: 10
+        options:
+        - 5
+        - 10
+        - 15
+        - 20
+      min_samples_leaf:
+        default: 1
+        options:
+        - 1
+        - 2
+        - 5
+      min_samples_split:
+        default: 2
+        options:
+        - 2
+        - 5
+        - 10
+    LogisticRegression:
+      C:
+        default: 0.01
+        options:
+        - 0.01
+        - 0.1
+        - 1
+        - 2
+      max_iter:
+        default: 100
+        options:
+        - 200
+        - 500
+        - 1000
+    RandomForest:
+      max_depth:
+        default: 2
+        options:
+        - 1
+        - 2
+        - 5
+      min_samples_leaf:
+        default: 4
+        options:
+        - 2
+        - 4
+        - 6
+      min_samples_split:
+        default: 10
+        options:
+        - 5
+        - 10
+        - 15
+        - 20
+      n_estimators:
+        default: 30
+        options:
+        - 20
+        - 30
+        - 40
+        - 50
+    SVM:
+      C:
+        default: 0.01
+        options:
+        - 0.0001
+        - 0.001
+        - 0.01
+        - 0.1
+        - 1
+      gamma:
+        default: 1
+        options:
+        - 0.01
+        - 0.1
+        - 1
+        - 2
+        - 5
+      kernel:
+        default: rbf
+        options:
+        - rbf
+        - linear
+        - poly
+    XGBoost:
+      colsample_bytree:
+        default: 0.6
+        options:
+        - 0.2
+        - 0.4
+        - 0.6
+        - 0.8
+      learning_rate:
+        default: 0.5
+        options:
+        - 0.4
+        - 0.5
+        - 0.6
+        - 0.7
+      max_depth:
+        default: 3
+        options:
+        - 1
+        - 2
+        - 3
+        - 5
+      n_estimators:
+        default: 50
+        options:
+        - 10
+        - 30
+        - 50
+        - 70
+      subsample:
+        default: 0.6
+        options:
+        - 0.4
+        - 0.6
+        - 0.8
+data_setting:
+  aug:
+    default: true
+    options:
+    - true
+    - false
+  drop_columns:
+  - id
+  - gender
+  - Gram Stain
+  - Acid Fast B(PL)
+  - pH(PL)
+  - Eosinophil%
+  - React Lympho%
+  - Transparency
+  - Etiology
+  feature_type:
+    default: roi_expand_15_feature
+    options:
+    - roi_expand_15_feature
+  image_type:
+    default: expand_15
+    options:
+    - expand_15
+  num_malignant: 24
+  num_sample: 100
+dimred:
+  default: umap
+  options:
+  - pca
+  - kpca
+  - umap

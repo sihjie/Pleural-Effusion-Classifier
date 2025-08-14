@@ -1,0 +1,58 @@
+num_folds: 5
+
+data_setting:
+  image_type:
+    default: expand_15
+    options:
+      # - original
+      # - CLAHE # clahe
+      # - bm3d_clahe
+      - expand_15  # bm3d_clahe expand_15 roi
+      - expand_20
+      # - bm3d
+      # - x-ray
+
+  num_sample: 100
+
+  num_malignant: 24
+
+  aug:
+    default: True
+    options:
+      - True
+      # - False
+      
+model_parameter:
+  model_name: 
+    default: mobilenetv3_small
+    options:
+      - resnet50
+      # - vgg19 # bad
+      - efficientnetv2_s
+      # - convnext_tiny # bad
+      - mobilenetv3_small
+      - densenet121
+
+  learning_rate:
+    default: 0.001
+    options:
+      # - 0.01
+      - 0.001
+      - 0.0001
+
+  loss_function:
+    default: weighted-ce
+    options:
+      - weighted-ce
+      - focal
+      - cb-focal
+      - f1
+
+
+  patience: 15
+
+  epochs: 100
+
+  batch_size: 16
+
+

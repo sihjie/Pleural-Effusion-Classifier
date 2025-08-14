@@ -1,0 +1,7 @@
+*.log
+*.csv
+*.jpg
+*.png
+*.pth
+
+**/script_results/

@@ -1,0 +1,61 @@
+model_setting:
+  model_name: 
+    default: GLFR
+    options:
+      - UNet
+      - GLFR
+      - UNet++
+      - AttentionUNet
+      - nnUNet
+
+
+  num_folds: 5
+
+  early_stopping:
+    default: True
+    patience: 15
+
+  epochs: 
+    default: 100
+    options:
+      - 50
+      - 100
+      - 200
+
+  batch_size: 
+    default: 4
+    options:
+      - 2
+      - 4
+      - 8
+      - 16
+
+  learning_rate:
+    default: 0.0001
+    options:
+      - 0.001
+      - 0.0001
+    
+  loss_function:
+    default: dice
+    options:
+      - weighted-ce
+      - focal
+      - dice
+      - ce
+      - combo
+  
+data_setting:
+  img_type:
+    default: bm3d_clahe
+    options:
+      - original
+      - bm3d_clahe
+      - bm3d
+      - clahe
+
+  aug:
+    default: True
+    options:
+      - True
+      - False

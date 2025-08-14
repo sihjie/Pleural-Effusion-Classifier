@@ -1,0 +1,30 @@
+certifi==2021.5.30
+cycler @ file:///home/conda/feedstock_root/build_artifacts/cycler_1635519461629/work
+docopt==0.6.2
+joblib @ file:///home/conda/feedstock_root/build_artifacts/joblib_1663332044897/work
+kiwisolver @ file:///D:/bld/kiwisolver_1610099971815/work
+matplotlib @ file:///D:/bld/matplotlib-suite_1611858808344/work
+numpy @ file:///D:/bld/numpy_1626682185159/work
+olefile @ file:///home/conda/feedstock_root/build_artifacts/olefile_1602866521163/work
+pandas @ file:///D:/bld/pandas_1607423921518/work
+Pillow @ file:///D:/bld/pillow_1630696770108/work
+pykwalify @ file:///home/conda/feedstock_root/build_artifacts/pykwalify_1701902997340/work
+pyparsing @ file:///home/conda/feedstock_root/build_artifacts/pyparsing_1724616129934/work
+PyQt5==5.12.3
+PyQt5_sip==4.19.18
+PyQtChart==5.12
+PyQtWebEngine==5.12.1
+pyradiomics==3.0.1
+python-dateutil @ file:///home/conda/feedstock_root/build_artifacts/python-dateutil_1626286286081/work
+pytz @ file:///home/conda/feedstock_root/build_artifacts/pytz_1693930252784/work
+PyWavelets==1.0.0
+ruamel.yaml @ file:///D:/bld/ruamel.yaml_1630314251701/work
+ruamel.yaml.clib @ file:///D:/bld/ruamel.yaml.clib_1610147053462/work
+scikit-learn @ file:///D:/bld/scikit-learn_1630910697567/work
+scipy @ file:///C:/bld/scipy_1629411592125/work
+SimpleITK==2.1.0
+six @ file:///home/conda/feedstock_root/build_artifacts/six_1620240208055/work
+threadpoolctl @ file:///home/conda/feedstock_root/build_artifacts/threadpoolctl_1643647933166/work
+tornado @ file:///D:/bld/tornado_1610094881553/work
+trimesh @ file:///home/conda/feedstock_root/build_artifacts/trimesh_1732774977662/work
+wincertstore==0.2

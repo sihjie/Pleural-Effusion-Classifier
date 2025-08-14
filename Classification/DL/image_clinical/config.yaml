@@ -1,0 +1,67 @@
+num_folds: 5
+
+data_setting:
+  image_type:
+    default: original
+    options:
+      # - original
+      # - CLAHE
+      # - despeckle
+      - x-ray
+      # - UNetPlusPlus-roi
+      # - GLFR-roi
+
+  feature_type:
+    default: clinical_feature
+    options: 
+      - clinical_feature 
+      - clinical_CXR
+      - CXR_feature
+
+  drop_columns:
+    - 'id'
+    - 'gender'
+    - 'Gram Stain'
+    - 'Acid Fast B(PL)'
+    - 'pH(PL)'
+    - 'Eosinophil%'
+    - 'React Lympho%' 
+    - 'Transparency'
+    - 'Etiology'
+    - 'Atelectasis' # CXR
+
+  num_sample: 100
+
+  num_malignant: 24
+
+  aug:
+    default: False
+    options:
+      - True
+      - False
+      
+model_parameter:
+  model_name: 
+    default: resnet50
+    options:
+      - resnet50
+      # - vgg19
+
+  learning_rate:
+    default: 0.001
+    options:
+      # - 0.01
+      - 0.001
+      - 0.0001
+
+  loss_function:
+    default: weighted-ce
+    options:
+      - weighted-ce
+      - focal
+
+  epochs: 40
+
+  batch_size: 32
+
+

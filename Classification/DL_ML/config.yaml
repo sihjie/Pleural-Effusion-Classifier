@@ -1,0 +1,228 @@
+data_setting:
+  image_type:
+    default: expand_15
+    options:
+      # - original
+      # - CLAHE
+      # - bm3d_clahe
+      - expand_15  # bm3d_clahe expand_15 roi
+      # - bm3d
+      # - x-ray
+
+  feature_type:
+    default: roi_expand_15_feature
+    options: 
+      # - clinical_feature 
+      # - clinical_CXR
+      # - CXR_feature
+      # - clinical_roi_extend_15
+      # - clinical_expand_15
+      - roi_expand_15_feature
+
+  drop_columns:
+    - 'id'
+    - 'gender'
+    - 'Gram Stain'
+    - 'Acid Fast B(PL)'
+    - 'pH(PL)'
+    - 'Eosinophil%'
+    - 'React Lympho%' 
+    - 'Transparency'
+    - 'Etiology'
+    # - 'Atelectasis' # CXR
+
+  num_sample: 100
+
+  num_malignant: 24
+
+  aug:
+    default: True
+    options:
+    - True
+    - False
+      
+DL_model:
+  model_name: 
+    default: efficientnetv2_s
+    options:
+      - resnet50
+      # - vgg19 
+      - efficientnetv2_s
+      # - convnext_tiny 
+      - mobilenetv3_small
+      - densenet121
+
+  learning_rate:
+    default: 0.001
+    options:
+      # - 0.01
+      - 0.001
+      - 0.0001
+
+  loss_function:
+    default: f1
+    options:
+      - weighted-ce
+      - focal
+      - cb-focal
+      - f1
+
+  epochs: 100
+
+  batch_size: 16
+
+  dropout:
+    default: False
+    options:
+      - True
+      - False
+    
+    dropout_rate: 0.5
+
+  early_stopping:
+    default: True
+
+    patience: 15
+
+dimred:
+  default: umap
+  options:
+    - pca
+    - kpca
+    # - tsne
+    - umap
+
+ML_model:
+  name:
+    default: XGBoost
+    options:
+      - DecisionTree
+      - RandomForest
+      - SVM
+      - LogisticRegression
+      - XGBoost
+
+  parameters:
+    DecisionTree:
+      max_depth:
+        default: 10
+        options:
+          - 5
+          - 10
+          - 15
+          - 20
+      min_samples_split:
+        default: 2
+        options:
+          - 2
+          - 5
+          - 10
+      min_samples_leaf:
+        default: 1
+        options:
+          - 1
+          - 2
+          - 5
+  
+    RandomForest:
+      n_estimators:
+        default: 30
+        options:
+          - 20
+          - 30
+          - 40
+          - 50
+      max_depth:
+        default: 2
+        options:
+          - 1
+          - 2
+          - 5
+      min_samples_split:
+        default: 10
+        options:
+          - 5
+          - 10
+          - 15
+          - 20
+      min_samples_leaf:
+        default: 4
+        options:
+          - 2
+          - 4
+          - 6
+    
+    SVM:
+      kernel:
+        default: rbf
+        options:
+          - rbf
+          - linear
+          - poly
+      C:
+        default: 0.01
+        options:
+          - 0.0001
+          - 0.001
+          - 0.01
+          - 0.1
+          - 1
+      gamma:
+        default: 1
+        options:
+          - 0.01
+          - 0.1
+          - 1
+          - 2
+          - 5
+    
+    LogisticRegression:
+      C:
+        default: 0.01
+        options:
+          - 0.01
+          - 0.1
+          - 1
+          - 2
+      max_iter:
+        default: 100
+        options:
+        - 200
+        - 500
+        - 1000
+
+    XGBoost:
+      n_estimators:
+        default: 50
+        options:
+          - 10
+          - 30
+          - 50
+          - 70
+      max_depth:
+        default: 3
+        options:
+          - 1
+          - 2
+          - 3
+          - 5
+      learning_rate:
+        default: 0.5
+        options:
+          - 0.4
+          - 0.5
+          - 0.6
+          - 0.7
+      subsample:
+        default: 0.6
+        options:
+          - 0.4
+          - 0.6
+          - 0.8
+      colsample_bytree:
+        default: 0.6
+        options:
+          - 0.2
+          - 0.4
+          - 0.6
+          - 0.8
