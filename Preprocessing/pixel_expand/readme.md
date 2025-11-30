@@ -4,10 +4,10 @@
 
 pixel_expand  
 |- inter_window_mask  
-|  "\t"   |- inter_mask_expand_##    // window 內 延伸 ## pixels 的 mask 影像  
+|  \t  |- inter_mask_expand_##    // window 內 延伸 ## pixels 的 mask 影像  
 |      
 |- origin_expand_mask  
-|   "\t"  |- roi_expand_##    // 存放延伸 ## pixel 的 mask 影像  
+|   \t  |- roi_expand_##    // 存放延伸 ## pixel 的 mask 影像  
 |  
 |- full_selection_mask.jpg  // window 大小的 mask，用於限制 pixel expand 範圍  
 |- full_selection_mask_spe.jpg  // window大小的 mask，用於'0043'及'0067'影像（兩張超音波影像大小及解析度與其他不同，另外處理）  
