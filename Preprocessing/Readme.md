@@ -15,7 +15,6 @@ Preprocessing
 | delabeled_crop.py    | 將影像 delabeled 及裁切 |
 | mask.py      | 取得 mask ground truth |
 | get_roi.py   | 取得 ROI 影像 |
-
-| polygon_points.pptx  // 用 ppt 手動計算 cropped 出扇形面積時需要的多邊形的坐標
+| polygon_points.pptx  | 用 ppt 手動計算 cropped 出扇形面積時需要的多邊形的坐標 |
 
 **除 BM3D_allstages，其餘 BM3D 皆只經過第一階段去雜訊（Basic Estimation）**
