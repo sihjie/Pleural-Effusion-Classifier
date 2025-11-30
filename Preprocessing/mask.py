@@ -31,16 +31,16 @@ def img_crop(image_path):
             [1165, 735],
             [845, 160]
         ])
-            
-    polygon_points = np.array([
-        [width//2-105, 90],
-        [80, height-200], 
-        [230, height-85], 
-        [width//2, height-75], 
-        [width-230, height-85],
-        [width-80, height-200],
-        [width//2+105, 90] 
-    ])
+    else:        
+        polygon_points = np.array([
+            [width//2-105, 90],
+            [80, height-200], 
+            [230, height-85], 
+            [width//2, height-75], 
+            [width-230, height-85],
+            [width-80, height-200],
+            [width//2+105, 90] 
+        ])
     
     cv2.fillPoly(mask, [polygon_points], 255)
     result = cv2.bitwise_and(img, img, mask=mask)
