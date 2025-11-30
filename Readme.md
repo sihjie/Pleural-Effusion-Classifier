@@ -1,4 +1,4 @@
-This study presents a CAD system that combines ultrasound images and clinical data to classify pleural effusions as benign or malignant. Using 100 cases, the workflow includes image preprocessing, deep segmentation, ROI expansion, texture and deep feature extraction, and dimensionality reduction. Three feature combinations were tested with multiple machine-learning models, with the best performance achieved by integrating deep, texture, and clinical features.
+This study presents a system that combines ultrasound images and clinical data to classify pleural effusions as benign or malignant. Using 100 cases, the workflow includes image preprocessing, deep segmentation, ROI expansion, texture and deep feature extraction, and dimensionality reduction. Three feature combinations were tested with multiple machine-learning models, with the best performance achieved by integrating deep, texture, and clinical features.
 
 
 
